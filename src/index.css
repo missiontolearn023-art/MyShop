@@ -10,3 +10,35 @@
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
 }
+
+
+
+.banner-track {
+  display: flex;
+  width: max-content;
+  margin-left: 0;
+  padding-left: 0;
+  animation: banner-scroll 15s linear infinite;
+  will-change: transform;
+}
+
+.banner-group {
+  display: flex;
+  gap: 16px;
+  padding-right: 16px;
+  flex-shrink: 0;
+}
+
+@keyframes banner-scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(calc(-50% - 8px));
+  }
+}
+
+.banner-track:hover {
+  animation-play-state: paused;
+}

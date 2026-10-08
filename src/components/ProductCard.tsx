@@ -42,11 +42,11 @@ export function ProductCard({ product, onAddToCart, inCart }: ProductCardProps) 
         <h3 className="text-sm font-semibold text-gray-800 leading-snug min-h-[2.5rem]">
           {product.name}
         </h3>
-        <p className="text-xs text-gray-500 mt-1">{product.unit}</p>
+        <p className="text-xs text-grat-500 font-medium mt-1">{product.unit}</p>
 
         <div className="mt-2 flex items-center justify-between gap-2 mt-auto pt-2">
           <span className="text-lg font-bold text-gray-900">
-            Rs.{product.price}
+            {/* Rs.{product.price} */}
           </span>
 
           {product.available ? (
