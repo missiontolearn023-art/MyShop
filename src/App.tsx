@@ -4,6 +4,8 @@ import { HomePage } from '@/pages/HomePage';
 import { AboutPage } from '@/pages/AboutPage';
 import { Footer } from '@/components/Footer';
 import { useCart } from '@/hooks/useCart';
+import { Analytics } from '@vercel/analytics/react';
+
 
 function App() {
   const [cartOpen, setCartOpen] = useState(false);
@@ -11,6 +13,7 @@ function App() {
 
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col">
+      <Analytics/>
       <Routes>
         <Route
           path="/"
