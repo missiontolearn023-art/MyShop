@@ -5,6 +5,7 @@ import { sendWhatsAppOrder } from '@/utils/whatsapp';
 interface CartDrawerProps {
   open: boolean;
   items: CartItem[];
+  totalPrice: number;
   onClose: () => void;
   onIncrease: (id: string) => void;
   onDecrease: (id: string) => void;
@@ -14,6 +15,7 @@ interface CartDrawerProps {
 export function CartDrawer({
   open,
   items,
+  totalPrice,
   onClose,
   onIncrease,
   onDecrease,
@@ -21,7 +23,7 @@ export function CartDrawer({
 }: CartDrawerProps) {
   const handleWhatsAppOrder = () => {
     if (items.length === 0) return;
-    sendWhatsAppOrder(items);
+    sendWhatsAppOrder(items, totalPrice);
   };
 
   return (
@@ -70,6 +72,8 @@ export function CartDrawer({
           ) : (
             <ul className="space-y-3">
               {items.map((item) => (
+           
+                
                 <li
                   key={item.id}
                   className="flex items-center gap-3 bg-gray-50 rounded-lg p-2.5"
@@ -79,7 +83,7 @@ export function CartDrawer({
                       {item.name}
                     </p>
                     <p className="text-xs text-gray-500">
-                      {item.unit} 
+                      {item.unit} — Rs.{item.price}
                     </p>
                   </div>
 
@@ -105,7 +109,7 @@ export function CartDrawer({
                   {/* Line total + remove */}
                   <div className="flex flex-col items-end gap-1 w-16">
                     <span className="text-sm font-bold text-gray-900">
-                      {/* Rs.{item.price * item.quantity} */}
+                      Rs.{item.price * item.quantity}
                     </span>
                     <button
                       onClick={() => onRemove(item.id)}
@@ -126,7 +130,7 @@ export function CartDrawer({
             <div className="flex items-center justify-between">
               <span className="text-sm font-medium text-gray-600">Total Amount</span>
               <span className="text-xl font-bold text-emerald-700">
-                {/* Rs} */}
+                Rs.{totalPrice}
               </span>
             </div>
 

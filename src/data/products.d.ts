@@ -20,3 +20,5 @@ declare module '@/data/products' {
   export const categories: Category[];
   export const products: Product[];
 }
+
+

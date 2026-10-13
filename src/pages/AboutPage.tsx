@@ -104,7 +104,7 @@ export function AboutPage({ cart, onCartOpen, cartOpen, onCartClose }: AboutPage
               WhatsApp
             </a>
 
-            <a
+            {/* <a
               href={directionsLink}
               target="_blank"
               rel="noopener noreferrer"
@@ -112,11 +112,11 @@ export function AboutPage({ cart, onCartOpen, cartOpen, onCartClose }: AboutPage
             >
               <Navigation className="w-4 h-4" />
               Get Directions
-            </a>
+            </a> */}
           </div>
         </div>
 
-        {/* Google Maps embed */}
+        {/* Google Maps embed
         <div className="bg-white rounded-2xl border border-gray-200 overflow-hidden mb-6">
           <div className="aspect-video w-full bg-gray-100">
             <iframe
@@ -130,7 +130,7 @@ export function AboutPage({ cart, onCartOpen, cartOpen, onCartClose }: AboutPage
               title="Shop Location"
             />
           </div>
-        </div>
+        </div> */}
 
         {/* Back to shopping */}
         <Link
